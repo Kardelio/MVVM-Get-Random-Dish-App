@@ -60,12 +60,11 @@ class DishDeserializer : JsonDeserializer<Dish> {
                 val instructions = getJsonString(jsonObject, "strInstructions")
                 val thumbnail = getJsonString(jsonObject, "strMealThumb")
                 val tags = getJsonString(jsonObject,"strTags")
-                val youtube = jsonObject.get("strYoutube").asString ?: ""
-                val source = jsonObject.get("strSource").asString ?: ""
+                val youtube = getJsonString(jsonObject,"strYoutube")
+                val source = getJsonString(jsonObject,"strSource")
                 for (i in 1..20) {
-                    jsonObject.get("abc").isJsonNull
-                    val ing = jsonObject.get("strIngredient${i}").asString ?: ""
-                    val measure = jsonObject.get("strMeasure${i}").asString ?: ""
+                    val ing = getJsonString(jsonObject,"strIngredient${i}")
+                    val measure =  getJsonString(jsonObject,"strMeasure${i}")
                     if (!ing.isBlank() && !measure.isBlank()) {
                         ingredients.add(Ingredient(ing, measure))
                     }
