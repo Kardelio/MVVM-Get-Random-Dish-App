@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/randomDishFragment">
+    <fragment
+        android:id="@+id/randomDishFragment"
+        android:name="bk.personal.com.getadish.randomDish.ui.RandomDishFragment"
+        android:label="Get A Random Dish">
+        <action
+            android:id="@+id/action_randomDishFragment_to_singleDishFragment"
+            app:destination="@id/singleDishFragment"
+            app:popUpTo="@id/randomDishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/previousDishFragment"
+        android:name="bk.personal.com.getadish.previousDishes.ui.PreviousDishFragment"
+        android:label="Previous Dishes" >
+        <action
+            android:id="@+id/action_previousDishFragment_to_singleDishFragment"
+            app:destination="@id/singleDishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleDishFragment"
+        android:name="bk.personal.com.getadish.singleDish.ui.SingleDishFragment"
+        android:label="Dish">
+        <argument
+            android:name="dishId"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+</navigation>
