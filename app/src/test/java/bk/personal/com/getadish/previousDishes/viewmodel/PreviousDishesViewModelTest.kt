@@ -1,13 +1,12 @@
 package bk.personal.com.getadish.previousDishes.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import bk.personal.com.getadish.IDishRepository
 import bk.personal.com.getadish.randomDish.model.Dish
 import com.nhaarman.mockitokotlin2.verify
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -20,7 +19,7 @@ import testingUtils.whenever
 
 class PreviousDishesViewModelTest {
 
-    lateinit var viewmodel: PreviousDishesViewModel
+    private lateinit var viewmodel: PreviousDishesViewModel
 
     private val repo: IDishRepository = classMock()
     private val listOfDishesLiveData: MutableLiveData<List<Dish>> = MutableLiveData()
@@ -51,5 +50,18 @@ class PreviousDishesViewModelTest {
         )
         verify(previousDishObserver).onChanged(capture(previousDishArgumentCaptor))
         assertEquals(1, previousDishArgumentCaptor.value.size)
+    }
+
+    @Test
+    fun `previous dish list matches repo list in this case multiple dishes`() {
+        listOfDishesLiveData.postValue(
+            listOf(
+                Dish(),
+                Dish(),
+                Dish()
+            )
+        )
+        verify(previousDishObserver).onChanged(capture(previousDishArgumentCaptor))
+        assertEquals(3, previousDishArgumentCaptor.value.size)
     }
 }

@@ -20,6 +20,7 @@ fun <T> same(obj: T): T = Mockito.same<T>(obj)
 
 fun <T> any(): T = Mockito.any<T>()
 fun anyBoolean(): Boolean = Mockito.anyBoolean()
+fun anyLong(): Long = Mockito.anyLong()
 
 fun <T> capture(argumentCaptor: ArgumentCaptor<T>): T = argumentCaptor.capture()
 

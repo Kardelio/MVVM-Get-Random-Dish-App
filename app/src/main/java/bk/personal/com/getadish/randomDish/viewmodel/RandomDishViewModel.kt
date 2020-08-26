@@ -14,7 +14,7 @@ class RandomDishViewModel @ViewModelInject constructor(val appStatusModel: IAppS
     ViewModel() {
 
     val currentDish = MutableLiveData<Dish>()
-    val buttonEnabled = MutableLiveData<Boolean>()
+//    val buttonEnabled = MutableLiveData<Boolean>()
 
     //Taskmanager?
 
