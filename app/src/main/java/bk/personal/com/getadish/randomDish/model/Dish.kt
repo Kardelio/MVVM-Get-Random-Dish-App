@@ -18,7 +18,7 @@ data class Dish(
     val ingredients: List<Ingredient> = emptyList()
 )
 
-class Ingredient(
+data class Ingredient(
     val name: String = "",
     val measurement: String = ""
 )

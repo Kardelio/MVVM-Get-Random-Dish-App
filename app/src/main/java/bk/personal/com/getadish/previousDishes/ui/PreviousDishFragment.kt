@@ -9,15 +9,18 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import bk.personal.com.getadish.R
 import bk.personal.com.getadish.previousDishes.viewmodel.PreviousDishesViewModel
+import bk.personal.com.getadish.randomDish.model.Dish
+import bk.personal.com.getadish.randomDish.ui.RandomDishFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_previous_dishes.view.*
 
 @AndroidEntryPoint
-class PreviousDishFragment : Fragment() {
+class PreviousDishFragment : Fragment(), PreviousDishClick {
 
     private lateinit var previousDishesAdapter: PreviousDishesAdapter
     private val viewmodel: PreviousDishesViewModel by viewModels()
@@ -29,7 +32,7 @@ class PreviousDishFragment : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_previous_dishes, container, false)
 
-        previousDishesAdapter = PreviousDishesAdapter()
+        previousDishesAdapter = PreviousDishesAdapter(this)
 
         v.previous_dishes_rv.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -41,8 +44,14 @@ class PreviousDishFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewmodel.previousDishes.observe(viewLifecycleOwner, Observer {
             previousDishesAdapter.submitList(it)
         })
+    }
+
+    override fun clickPreviousDish(dish: Dish) {
+        Log.d("BK","clicked: ${dish.name}")
+        findNavController().navigate(PreviousDishFragmentDirections.actionPreviousDishFragmentToSingleDishFragment(dish.id))
     }
 }

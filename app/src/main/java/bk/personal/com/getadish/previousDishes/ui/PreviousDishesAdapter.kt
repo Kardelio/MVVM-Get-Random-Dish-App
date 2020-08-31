@@ -11,7 +11,11 @@ import bk.personal.com.getadish.R
 import bk.personal.com.getadish.randomDish.model.Dish
 import com.bumptech.glide.Glide
 
-class PreviousDishesAdapter :
+interface PreviousDishClick {
+    fun clickPreviousDish(dish: Dish)
+}
+
+class PreviousDishesAdapter(private val callback : PreviousDishClick) :
     ListAdapter<Dish, PreviousDishesAdapter.DishViewHolder>(DishDiffCallback()) {
 
     class DishDiffCallback : DiffUtil.ItemCallback<Dish>() {
@@ -45,11 +49,14 @@ class PreviousDishesAdapter :
             }
 
         private fun configureUI() {
-            data?.let {
-                tv.text = it.name
+            data?.let {dish ->
+                tv.text = dish.name
                 Glide.with(itemView)
-                    .load(it.thumbnail)
+                    .load(dish.thumbnail)
                     .into(iv)
+                itemView.setOnClickListener {
+                    callback.clickPreviousDish(dish)
+                }
             }
         }
     }

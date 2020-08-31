@@ -17,7 +17,8 @@
         android:label="Previous Dishes" >
         <action
             android:id="@+id/action_previousDishFragment_to_singleDishFragment"
-            app:destination="@id/singleDishFragment" />
+            app:destination="@id/singleDishFragment"
+            app:popUpTo="@id/previousDishFragment"/>
     </fragment>
     <fragment
         android:id="@+id/singleDishFragment"
