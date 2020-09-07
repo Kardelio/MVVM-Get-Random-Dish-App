@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import bk.personal.com.getadish.config.IAppStatusModel
 import bk.personal.com.getadish.randomDish.model.Dish
-import bk.personal.com.getadish.IDishRepository
+import bk.personal.com.getadish.sharedRepository.IDishRepository
 import bk.personal.com.getadish.utils.DateUtils
 import kotlinx.coroutines.launch
 

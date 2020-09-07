@@ -3,7 +3,7 @@ package bk.personal.com.getadish.previousDishes.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import bk.personal.com.getadish.IDishRepository
+import bk.personal.com.getadish.sharedRepository.IDishRepository
 import bk.personal.com.getadish.randomDish.model.Dish
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Assert.assertEquals

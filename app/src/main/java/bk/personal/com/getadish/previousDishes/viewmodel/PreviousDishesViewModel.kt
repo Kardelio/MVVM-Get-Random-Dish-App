@@ -4,7 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import bk.personal.com.getadish.randomDish.model.Dish
-import bk.personal.com.getadish.IDishRepository
+import bk.personal.com.getadish.sharedRepository.IDishRepository
 
 class PreviousDishesViewModel @ViewModelInject constructor(private val repo: IDishRepository) : ViewModel() {
 

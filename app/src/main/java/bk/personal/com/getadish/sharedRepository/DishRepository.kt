@@ -1,4 +1,4 @@
-package bk.personal.com.getadish
+package bk.personal.com.getadish.sharedRepository
 
 import androidx.lifecycle.LiveData
 import bk.personal.com.getadish.db.DishDao

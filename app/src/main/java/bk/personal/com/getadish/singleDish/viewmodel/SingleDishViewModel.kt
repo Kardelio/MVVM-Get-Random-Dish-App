@@ -4,7 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import bk.personal.com.getadish.ISingleDishRepository
+import bk.personal.com.getadish.sharedRepository.ISingleDishRepository
 import bk.personal.com.getadish.randomDish.model.Dish
 import kotlinx.coroutines.launch
 

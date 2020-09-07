@@ -1,8 +1,8 @@
 package bk.personal.com.getadish.di.modules
 
-import bk.personal.com.getadish.DishRepository
-import bk.personal.com.getadish.IDishRepository
-import bk.personal.com.getadish.ISingleDishRepository
+import bk.personal.com.getadish.sharedRepository.DishRepository
+import bk.personal.com.getadish.sharedRepository.IDishRepository
+import bk.personal.com.getadish.sharedRepository.ISingleDishRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

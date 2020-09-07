@@ -2,14 +2,11 @@ package bk.personal.com.getadish.randomDish.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import bk.personal.com.getadish.IDishRepository
+import bk.personal.com.getadish.sharedRepository.IDishRepository
 import bk.personal.com.getadish.config.IAppStatusModel
 import bk.personal.com.getadish.randomDish.model.Dish
-import com.nhaarman.mockitokotlin2.doReturn
-import com.nhaarman.mockitokotlin2.stub
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
