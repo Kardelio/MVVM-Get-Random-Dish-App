@@ -79,7 +79,8 @@ class DishDeserializer : JsonDeserializer<Dish> {
                     tags,
                     youtube,
                     source,
-                    ingredients
+                    ingredients,
+                    System.currentTimeMillis() / 1000
                 )
             } ?: return Dish()
         } catch (e: Exception) {

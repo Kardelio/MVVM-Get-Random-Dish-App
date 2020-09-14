@@ -9,6 +9,8 @@ import javax.inject.Inject
 interface IDishRepository {
     suspend fun getARandomDish(): Dish
     fun getAllPreviousDishes(): LiveData<List<Dish>>
+    suspend fun updateDish(singleDish: Dish)
+    suspend fun deleteADish(dish: Dish)
 }
 
 interface ISingleDishRepository{
@@ -32,4 +34,12 @@ class DishRepository @Inject constructor(
     override suspend fun getSpecificDish(id: String): Dish {
         return db.getDish(id)
    }
+
+    override suspend fun updateDish(singleDish: Dish) {
+        db.addDish(singleDish)
+    }
+
+    override suspend fun deleteADish(dish: Dish) {
+        db.deleteDish(dish)
+    }
 }

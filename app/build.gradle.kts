@@ -56,7 +56,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra.get("kotlinVersion")}")
     implementation("androidx.core:core-ktx:1.3.0")
     implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+//    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.1")
 
     //Navigation Component
     implementation("androidx.navigation:navigation-fragment-ktx:2.2.2")
@@ -73,6 +74,8 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.2.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0")
+
+    implementation("com.airbnb.android:lottie:3.4.2")
 
     //Glide
     implementation("com.github.bumptech.glide:glide:4.11.0")

@@ -8,7 +8,7 @@ interface IAppStatusModel {
     var lastTimeStampButtonPressed: Long
 }
 
-class AppStatusModel @Inject constructor(val sp: SharedPreferences) : IAppStatusModel {
+class AppStatusModel @Inject constructor(sp: SharedPreferences) : IAppStatusModel {
 
     override var lastTimeStampButtonPressed: Long by SharedPreferencesDelegate(sp, BUTTON_TIMESTAMP_KEY, 0L)
 

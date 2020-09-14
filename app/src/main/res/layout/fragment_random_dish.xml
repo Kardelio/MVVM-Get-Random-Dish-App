@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/randomDishMotionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:layoutDescription="@xml/fragment_random_dish_scene">
 
-    <LinearLayout
-        android:id="@+id/randomDishContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/random_dish_background"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/boilingPotView"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:visibility="visible"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/boiling_pot" />
 
-        <TextView
-            android:id="@+id/dishTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="test"/>
-
-        <ImageView
-            android:id="@+id/dishImageView"
-            tools:src="@tools:sample/avatars"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"/>
-
-    </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/getRandomDishButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:paddingHorizontal="12dp"
-        android:background="@drawable/button_background"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/dishImageView"
+        android:layout_width="0dp"
+        android:visibility="invisible"
+        android:layout_height="400dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="20dp"
-        android:text="Get A Random Dish"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:src="@tools:sample/avatars"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
+    <!--        android:id="@+id/randomDishContainer"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="8dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="8dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/dishTitleText"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textSize="24sp"-->
+    <!--            tools:text="Name of Dish" />-->
+
+
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:id="@+id/getRandomDishButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="20dp"-->
+    <!--        android:background="@drawable/button_background"-->
+    <!--        android:paddingHorizontal="12dp"-->
+    <!--        android:text="Get A Random Dish"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+

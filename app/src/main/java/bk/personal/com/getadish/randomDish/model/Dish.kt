@@ -15,7 +15,9 @@ data class Dish(
     val tags: String? = "",
     val youtubeLink: String? = "",
     val source: String? = "",
-    val ingredients: List<Ingredient> = emptyList()
+    val ingredients: List<Ingredient> = emptyList(),
+    val timestamp: Long = 0L,
+    var favourited: Boolean = false
 )
 
 data class Ingredient(
